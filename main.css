@@ -1,0 +1,256 @@
+/*OVERALL*/
+@font-face{
+  font-family: Diatype;
+  src: url(ThatDiatype-Regular.woff);
+  font-weight: lighter;
+  font-style: normal;
+}
+
+:root {
+	--fontSizeS: .8em;
+	--fontSizeM: 1.2em;
+	--fontSizeL: 3em;
+	--grey: #b2b2b2;
+	--orange: rgb(255,70,0);
+	--black: #161616;
+	--margin: 20px;
+}
+
+* {
+	font-family: Diatype;
+
+  /*unselectable*/
+  -webkit-user-select: none;  
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /*hide scrollbar*/
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  cursor: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='45' height='30' viewBox='0 0 66.04 85.66'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='42.15 83.9 64.35 61.7 57.63 54.99 57.63 39.51 21.86 3.75 15.28 10.34 26.68 21.74 3.34 45.08 42.15 83.9'/%3E%3Cpath d='M35.65,29,18,11.29l4.12-4.11L39.77,24.84ZM27.8,36.8l-6.07-6.08,4.35-4.36,6.08,6.08Zm1.1,15.55L14.5,37.94l4.06-4.06L33,48.28ZM11.25,41.2,25.66,55.61l-4.17,4.16L7,45.41Zm31.34,25,3.54-3.54-6-6-.24-8.28,7.66-7.66L44,37.18,36.13,45l-4.59-4.59L43.45,28.52,54.94,40l-.29,16,7.71,7.71L66,60,60,53.93l0-15.65L21.73,0l-11,11L22.54,22.73,0,45.27,40.39,85.66l3.49-3.49L25.08,63.36l10-10-.1,5.16Z'/%3E%3C/svg%3E%0A"), pointer!important;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+	padding: var(--margin);
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: var(--margin);
+	background-color: var(--grey);
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--fontSizeM);
+	z-index: 2;
+}
+
+header p {
+	position: relative;
+	margin: 0;
+}
+header #logo {
+	display: flex;
+	align-items: baseline;
+}
+header #logo p {
+	margin-left: 10px;
+}
+
+header p:not(.logo_mano):hover {
+	color: white;
+	background-color: var(--black);
+}
+/*header p.header_logo:hover {
+	background-color: var(--orange);
+}*/
+header #logo img {
+	height: 1.4em;
+}
+/*header #logo img:hover {
+	background-color: var(--orange);
+}*/
+header #logo .hidden {
+	display: none;
+}
+
+header .dropbtn {
+  background-color: var(--grey);
+  color: black;
+  padding: 0px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 0;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: var(--black);
+	color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: var(--black);
+	color: white;
+}
+
+
+
+
+section.first {
+	margin-top: calc(1.8em + calc(var(--margin) * 2));
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+section.first marquee {
+	width: 100vw;
+	font-size: var(--fontSizeL);
+	background-color: var(--orange);
+	color: white;
+	z-index: 1;
+	position: fixed;
+}
+section.first marquee > img {
+	height: 1em;
+	margin-bottom: 10px;
+	filter: invert();
+}
+
+section .mainArea {
+	position: relative;
+	display: flex;
+	margin-top: 4.4em;
+	overflow: hidden;
+}
+
+section .columns {
+	display: flex;
+	width: calc(50% - 20px);
+	padding-left: var(--margin);
+	justify-content: space-between;
+	height: calc(100vh - 8.9em);
+
+  overflow: auto;
+}
+section .columns p {
+	font-size: var(--fontSizeS);
+}
+
+section .columns > .columns_inside {
+	width: 30%;
+	padding-bottom: var(--margin);
+}
+section .columns > .columns_inside figure {
+	width: 100%;
+	margin: 0;
+}
+section .columns > .columns_inside figure img {
+	width: 100%;
+}
+
+section.first .right_side {
+	background-color: white;
+	width: calc(50% - 20px);
+	padding-left: var(--margin);
+	padding-right: var(--margin);
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	border-left: 2px solid black;
+
+	height: calc(100vh - 8.9em);
+  overflow: auto;
+}
+
+section.first .right_side p,
+section.first .right_side h2 {
+	margin: 0;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.bigTitle {
+	font-size: 6em;
+	line-height: 90%;
+}
+
+section .right_side .columns {
+	display: flex;
+	width: 100%;
+	padding: 0;
+	justify-content: space-between;
+	margin-top: 10px;
+	height: auto;
+}
+section .right_side .columns > .columns_inside {
+	width: 48%;
+}
+section .right_side .row_black img {
+	filter: invert();
+	background-color: white;
+}
+section .right_side .row_black {
+	padding: 0;
+	margin-bottom: 20px;
+} 
+section .right_side .row_black .column {
+	padding: 0;
+}
+section .right_side .row_black .column img {
+	margin: 0;
+} 
