@@ -153,21 +153,80 @@ section.first marquee > img {
 }
 
 section .mainArea {
+	width: 100vw;
 	position: relative;
 	display: flex;
 	margin-top: 4.4em;
 	overflow: hidden;
+	flex-direction: row-reverse;
 }
 
 section .columns {
-	display: flex;
-	width: calc(50% - 20px);
-	padding-left: var(--margin);
+	width: 50%;
+	padding: var(--margin);
 	justify-content: space-between;
 	height: calc(100vh - 8.9em);
 
   overflow: auto;
 }
+
+section .columns .gallery {
+	margin: 0;
+	width: 100%;
+	height: calc(50vw - 40px);
+	display: flex;
+	overflow: scroll;
+	height: calc(50vw - 40px);
+}
+section .columns .gallery > figure {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+section .columns .gallery > figure > img {
+	height: 100%;
+}
+
+
+.imageArrowLeft {
+	content: "";
+	position: absolute;
+	width: 50%;
+	top: 0;
+	left: 0;
+	padding-right: 0;
+	padding-left: 0;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.4s;
+	cursor: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='71.92 43.76 71.92 13.16 62.66 13.16 51.99 2.49 2.68 2.49 2.68 11.57 18.41 11.57 18.41 43.76 71.92 43.76'/%3E%3Cpath d='M29.56,10.36H5.21V4.68H29.56Zm0,10.82H21.18v-6h8.38ZM41,31.14H21.18V25.53H41ZM21.18,35.63H41v5.74l-19.86.07ZM60,31.28V26.39H51.8l-5.88-5.54V10.29H41V21.11H34.64V4.68H50.48L61.3,15.9H71.92V10.82H63.54L52.79,0H0V15.11H16.23V46.19H71.92V41.37H46V27.65l3.5,3.63Z' transform='translate(0 0)'/%3E%3C/svg%3E%0A"), pointer!important;
+}
+.imageArrowRight {
+	content: "";
+	position: absolute;
+	width: 50%; /*40px;*/
+	top: 0;
+	right: 0;
+	padding-right: 0; /*20px;*/
+	padding-left: 0; /*20px;*/
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.4s;
+	cursor: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='0 43.76 0 13.16 9.26 13.16 19.93 2.49 69.24 2.49 69.24 11.57 53.51 11.57 53.51 43.76 0 43.76'/%3E%3Cpath d='M42.36,4.68H66.71v5.68H42.36Zm0,10.5h8.38v6H42.36ZM30.88,25.53H50.74v5.61H30.88ZM50.74,41.44l-19.86-.07V35.63H50.74ZM22.43,31.28l3.5-3.63V41.37H0v4.82H55.69V15.11H71.92V0H19.13L8.38,10.82H0V15.9H10.62L21.44,4.68H37.28V21.11H31V10.29H26V20.85l-5.88,5.54H11.88v4.89Z'/%3E%3C/svg%3E%0A"), pointer!important;
+}
+.imageArrowLeft:hover, .imageArrowRight:hover {
+	opacity: 1;
+}
+.imageArrowLeft:hover {
+	cursor: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='71.92 43.76 71.92 13.16 62.66 13.16 51.99 2.49 2.68 2.49 2.68 11.57 18.41 11.57 18.41 43.76 71.92 43.76'/%3E%3Cpath d='M29.56,10.36H5.21V4.68H29.56Zm0,10.82H21.18v-6h8.38ZM41,31.14H21.18V25.53H41ZM21.18,35.63H41v5.74l-19.86.07ZM60,31.28V26.39H51.8l-5.88-5.54V10.29H41V21.11H34.64V4.68H50.48L61.3,15.9H71.92V10.82H63.54L52.79,0H0V15.11H16.23V46.19H71.92V41.37H46V27.65l3.5,3.63Z' transform='translate(0 0)'/%3E%3C/svg%3E%0A"), pointer;
+}
+.imageArrowRight:hover {
+	cursor: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='0 43.76 0 13.16 9.26 13.16 19.93 2.49 69.24 2.49 69.24 11.57 53.51 11.57 53.51 43.76 0 43.76'/%3E%3Cpath d='M42.36,4.68H66.71v5.68H42.36Zm0,10.5h8.38v6H42.36ZM30.88,25.53H50.74v5.61H30.88ZM50.74,41.44l-19.86-.07V35.63H50.74ZM22.43,31.28l3.5-3.63V41.37H0v4.82H55.69V15.11H71.92V0H19.13L8.38,10.82H0V15.9H10.62L21.44,4.68H37.28V21.11H31V10.29H26V20.85l-5.88,5.54H11.88v4.89Z'/%3E%3C/svg%3E%0A"), pointer;
+}
+
+
+/*––––––*/
 section .columns p {
 	font-size: var(--fontSizeS);
 }
@@ -184,24 +243,35 @@ section .columns > .columns_inside figure img {
 	width: 100%;
 }
 
-section.first .right_side {
+section.first .feed_side {
 	background-color: white;
-	width: calc(50% - 20px);
-	padding-left: var(--margin);
-	padding-right: var(--margin);
+	width: 50%;
+	padding: var(--margin);
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	height: 100%;
-	border-left: 2px solid black;
+	border-right: 2px solid black;
 
 	height: calc(100vh - 8.9em);
   overflow: auto;
 }
 
-section.first .right_side p,
-section.first .right_side h2 {
+section.first .feed_side p,
+section.first .feed_side h2 {
 	margin: 0;
+}
+section.first .feed_side figure {
+	margin: 0;
+	width: 100%;
+}
+section.first .feed_side figure > img {
+	width: 100%;
+}
+section.first .feed_side .post:not(:first-child) {
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: 2px solid var(--orange);
 }
 
 
@@ -229,7 +299,7 @@ section.first .right_side h2 {
 	line-height: 90%;
 }
 
-section .right_side .columns {
+section .feed_side .columns {
 	display: flex;
 	width: 100%;
 	padding: 0;
@@ -237,20 +307,20 @@ section .right_side .columns {
 	margin-top: 10px;
 	height: auto;
 }
-section .right_side .columns > .columns_inside {
+section .feed_side .columns > .columns_inside {
 	width: 48%;
 }
-section .right_side .row_black img {
+section .feed_side .row_black img {
 	filter: invert();
 	background-color: white;
 }
-section .right_side .row_black {
+section .feed_side .row_black {
 	padding: 0;
 	margin-bottom: 20px;
 } 
-section .right_side .row_black .column {
+section .feed_side .row_black .column {
 	padding: 0;
 }
-section .right_side .row_black .column img {
+section .feed_side .row_black .column img {
 	margin: 0;
 } 
