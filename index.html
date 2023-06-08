@@ -22,13 +22,16 @@
 
 <!--BODY-->
 <body>
+    <div class='loader_background'>
+    <img class='loader' src="loader_2.gif"></div>
+
     <header>
         <!--p>MENU</p-->
         <div class="dropdown">
-            <p class="dropbtn">MENU</p>
+            <p class="dropbtn">NEWS</p>
             <div class="dropdown-content">
-                <a href="#news">NEWS</a>
-                <a href="#events">EVENTS</a>
+                <a href="#news" class="hidden">NEWS</a>
+                <a href="#shop">SHOP</a>
                 <a href="#about">ABOUT</a>
             </div>
         </div>
@@ -45,7 +48,7 @@
             <img class='logo_mano 6 hidden' src='mani/mano-6.png'>
             <img class='logo_mano 7 hidden' src='mani/mano-7.png'>
         </div>
-        <p onclick='alert("website in construction!")'>RELEASES</p>
+        <a href='player.html'  style='text-decoration: none;'>PLAYER</a>
     </header>
     <section class='first'>
         <marquee>
@@ -54,8 +57,43 @@
             <img src='gattocarlo2.png'>
             15.06.23 — BURNING DOGS NEW ALBUM RELEASE — CAT FOOD — IN STREAMING AND STORES
         </marquee>
+
+        <!--SHOP-->
+        <div id='shop' class='feed_side hidden'>
+            <div class="row post"> 
+                <figure>
+                    <img src='post/post3.png'>
+                </figure>
+                <p>Ticket</p>
+
+                <figure>
+                    <img src='post/post4.png'>
+                </figure>
+                <p>Ticket</p>
+
+                <figure>
+                    <img src='post/post5.png'>
+                </figure>
+                <p>Ticket</p>
+            </div>
+        </div>
+
+        <!--ABOUT-->
+        <div id='about' class='feed_side hidden'>
+            <p> THAT Records is a team of four passionate graphic design students who believe in the power of disruptive music and innovative genres. Our mission is simple yet audacious: to discover, support, and share the most exciting and boundary-pushing sounds from around the world.</p>
+            <p>As young creatives, we have always been drawn to the unconventional, the experimental, and the fresh. Our diverse backgrounds and shared love for music have brought us together, fueling our collective desire to challenge the status quo and redefine what it means to be a record label in the modern age.</p>
+            <p> THAT Records is a haven for artists who dare to push the boundaries of music. We're not interested in replicating what's already out there; instead, we actively seek out artists who are unafraid to experiment, innovate, and disrupt established norms. Whether it's a fusion of genres, unconventional song structures, or groundbreaking production techniques, we are here to amplify the voices of those who are redefining the musical landscape.</p>
+            <p>Our mission includes:<br>
+             Discovering hidden gems: We tirelessly scour the underground music scene, from basement gigs to internet rabbit holes, in search of artists with raw talent and a unique perspective. Our team has a knack for spotting the next big thing before it hits the mainstream, and we take pride in bringing these hidden gems to the forefront.<br>
+             Nurturing artistic growth: We understand the importance of artistic development and provide our signed artists with the support and resources they need to flourish. From studio time and production assistance to mentorship and collaboration opportunities, we are committed to helping our artists hone their craft and reach their full potential.<br>
+             Amplifying innovative sounds: We believe that truly groundbreaking music deserves a global platform. Through our extensive network and strategic partnerships, we ensure that our artists' voices are heard by a wider audience. Whether it's securing distribution deals, organizing showcases, or curating immersive experiences, we go the extra mile to showcase the innovative sounds that define  THAT Records.<br>
+             Fostering a community: We're not just a label; we're a community of like-minded individuals who are passionate about pushing the boundaries of music. We organize events, workshops, and networking opportunities to foster connections between artists, fans, and industry professionals. Together, we create an environment where creativity thrives and innovation flourishes.</p>
+            <p>At  THAT Records, we invite you to embark on a musical journey unlike any other. Explore our artist roster, immerse yourself in our curated playlists, and stay up-to-date with the latest trends in disruptive music. Whether you're an artist, a music lover, or an industry insider, we welcome you to be part of our ever-evolving movement.</p>
+            <p>Together, let's redefine the future of music. How about  THAT ?</p>
+        </div>
+
         <div class='mainArea'>
-            <div class='feed_side'>
+            <div id='news' class='feed_side'>
                 <div class="row post"> 
                     <div class="column">
                         <img src='gattocarlo.png'>
@@ -74,9 +112,9 @@
                     </div>
                 </div>
                 <h1>SUN, 25th OCT.</h1>
-                <p class='bigTitle'>BURNING DOGS</p class='bigTitle'>
+                <p class='bigTitle'>BURNING DOGS
                 <br>
-                <p class='bigTitle'>21:00–04:00</p class='bigTitle'>
+                21:00–04:00</p class='bigTitle'>
                 <div class='columns'>
                     <div class='columns_inside column_1'>
                         <p><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<p>
@@ -105,9 +143,9 @@
                     </div>
                 </div>
                 <h1>MON, 06th SEPT.</h1>
-                <p class='bigTitle'>BLACK AND WHITE CATS</p class='bigTitle'>
+                <p class='bigTitle'>BLACK AND WHITE CATS
                 <br>
-                <p class='bigTitle'>22:00–02:00</p class='bigTitle'>
+                22:00–02:00</p class='bigTitle'>
                 <div class='columns'>
                     <div class='columns_inside column_1'>
                         <p><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<p>
@@ -148,6 +186,10 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!--RIGHT-->
             <div class='columns'>
                 <div class='gallery'>
                     <figure>
@@ -182,7 +224,6 @@
             </div>
         </div>
     </section>
-    <p>ciao</p>
 </body>
 
 </html>

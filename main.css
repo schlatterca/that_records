@@ -39,6 +39,36 @@ body {
 	padding: var(--margin);
 }
 
+.loader {
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:10;
+	width:40vw;
+	height: auto;
+	transform: translate(-50%,-50%);
+	/*animation-name: fadeToNothing;*/
+	/*animation-duration: 4s;*/
+	/*animation-iteration-count: 1;*/
+}
+.loader_background {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	background-color: var(--grey);
+	/*animation-name: fadeToNothing;*/
+	/*animation-duration: 4s;*/
+	/*animation-iteration-count: 1;*/
+}
+@keyframes fadeToNothing {
+  0% {opacity: 1;}
+  80% {opacity: 1;}
+  100% {opacity: 0;};
+}
+
 header {
 	position: fixed;
 	top: 0;
@@ -49,7 +79,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	font-size: var(--fontSizeM);
-	z-index: 2;
+	z-index: 4;
 }
 
 header p {
@@ -111,6 +141,9 @@ header .dropdown {
   text-decoration: none;
   display: block;
 }
+.dropdown-content a.hidden {
+  display: none;
+}
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
@@ -138,18 +171,25 @@ section.first {
 	left: 0;
 	top: 0;
 }
-section.first marquee {
+section.first marquee,
+section.player marquee {
 	width: 100vw;
 	font-size: var(--fontSizeL);
 	background-color: var(--orange);
 	color: white;
-	z-index: 1;
+	z-index: 3;
 	position: fixed;
 }
 section.first marquee > img {
 	height: 1em;
 	margin-bottom: 10px;
 	filter: invert();
+}
+section.player marquee {
+	margin-top: calc(.6em + calc(var(--margin) * 2));
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 section .mainArea {
@@ -229,6 +269,7 @@ section .columns .gallery > figure > img {
 /*––––––*/
 section .columns p {
 	font-size: var(--fontSizeS);
+	line-height: 120%;
 }
 
 section .columns > .columns_inside {
@@ -252,9 +293,27 @@ section.first .feed_side {
 	left: 0;
 	height: 100%;
 	border-right: 2px solid black;
+	transition: .6s transform ease-in-out;
 
 	height: calc(100vh - 8.9em);
   overflow: auto;
+}
+section.first .feed_side.hidden {
+	transform: translate(-100%,0);
+}
+
+#shop {
+	margin-top: 4.4em;
+	z-index: 2;
+	background-color: var(--grey);
+}
+#about {
+	margin-top: 4.4em;
+	z-index: 2;
+	background-color: var(--orange);
+}
+#shop figure:not(:first-child) {
+	margin-top: 2em;
 }
 
 section.first .feed_side p,
@@ -268,7 +327,7 @@ section.first .feed_side figure {
 section.first .feed_side figure > img {
 	width: 100%;
 }
-section.first .feed_side .post:not(:first-child) {
+section.first .feed_side:not(#shop) .post:not(:first-child) {
 	margin-top: 2em;
 	padding-top: 2em;
 	border-top: 2px solid var(--orange);
@@ -324,3 +383,135 @@ section .feed_side .row_black .column {
 section .feed_side .row_black .column img {
 	margin: 0;
 } 
+
+
+.player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--black);
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 1;
+}
+.playerGif {
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:10;
+	width:40vw;
+	height: auto;
+	transform: translate(-50%,-50%);
+}
+.playerGif.hidden {
+	display: none;
+}
+audio {
+	position:absolute;
+	top:calc(calc(50% + 20vw) + 40px);
+	left:50%;
+	z-index:11;
+	width:40vw;
+	height: auto;
+	transform: translate(-50%,-50%);
+
+	display: none;
+}
+.controlContainer {
+	position:absolute;
+	top:calc(calc(50% + 20vw) + 40px);
+	left:50%;
+	z-index:11;
+	width:40vw;
+	height: auto;
+	transform: translate(-50%,-50%);
+	background-color: white;
+}
+
+.audio-player {
+  width: 40vw;
+  padding: 0;
+  margin: 0;
+}
+
+.player-controls {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#radioIcon {
+  width: 30px;
+  height: 30px;
+  background: url('https://img.icons8.com/ios/50/000000/microphone.png') no-repeat center;
+  background-size: contain;
+}
+
+#playAudio {
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer!important;
+  border: none;
+  width: 60px;
+  height: 60px;
+  background: url('https://img.icons8.com/play') no-repeat center;
+  background-size: contain;
+}
+
+#playAudio.pause {
+  background: url('https://img.icons8.com/pause') no-repeat center;
+  background-size: contain;
+}
+
+#leftHand {
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='71.92 43.76 71.92 13.16 62.66 13.16 51.99 2.49 2.68 2.49 2.68 11.57 18.41 11.57 18.41 43.76 71.92 43.76'/%3E%3Cpath d='M29.56,10.36H5.21V4.68H29.56Zm0,10.82H21.18v-6h8.38ZM41,31.14H21.18V25.53H41ZM21.18,35.63H41v5.74l-19.86.07ZM60,31.28V26.39H51.8l-5.88-5.54V10.29H41V21.11H34.64V4.68H50.48L61.3,15.9H71.92V10.82H63.54L52.79,0H0V15.11H16.23V46.19H71.92V41.37H46V27.65l3.5,3.63Z' transform='translate(0 0)'/%3E%3C/svg%3E%0A") no-repeat center;
+  background-size: contain;
+  border: 0;
+  margin-left: 10px;
+}
+#rightHand {
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background: url("data:image/svg+xml,%3Csvg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' width='71.92' height='46.19' viewBox='0 0 71.92 46.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='0 43.76 0 13.16 9.26 13.16 19.93 2.49 69.24 2.49 69.24 11.57 53.51 11.57 53.51 43.76 0 43.76'/%3E%3Cpath d='M42.36,4.68H66.71v5.68H42.36Zm0,10.5h8.38v6H42.36ZM30.88,25.53H50.74v5.61H30.88ZM50.74,41.44l-19.86-.07V35.63H50.74ZM22.43,31.28l3.5-3.63V41.37H0v4.82H55.69V15.11H71.92V0H19.13L8.38,10.82H0V15.9H10.62L21.44,4.68H37.28V21.11H31V10.29H26V20.85l-5.88,5.54H11.88v4.89Z'/%3E%3C/svg%3E%0A") no-repeat center;
+  background-size: contain;
+  border: 0;
+  margin-right: 10px;
+}
+
+p {
+  margin: 0 0 0 5px;
+  line-height: 1;
+  display: inline-flex;
+}
+p small {
+  font-size: 10px;
+}
+
+#seekObjContainer {
+  position: relative;
+  width: 300px;
+  margin: 0 5px;
+  height: 5px;
+}
+
+#seekObj {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  background-color: #e3e3e3;
+  border: 1px solid black;
+}
+
+#percentage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: coral;
+}

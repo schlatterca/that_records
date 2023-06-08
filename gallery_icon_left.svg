@@ -1,0 +1,11 @@
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" width="71.92" height="46.19" viewBox="0 0 71.92 46.19">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="71.92 43.76 71.92 13.16 62.66 13.16 51.99 2.49 2.68 2.49 2.68 11.57 18.41 11.57 18.41 43.76 71.92 43.76"/>
+  <path d="M29.56,10.36H5.21V4.68H29.56Zm0,10.82H21.18v-6h8.38ZM41,31.14H21.18V25.53H41ZM21.18,35.63H41v5.74l-19.86.07ZM60,31.28V26.39H51.8l-5.88-5.54V10.29H41V21.11H34.64V4.68H50.48L61.3,15.9H71.92V10.82H63.54L52.79,0H0V15.11H16.23V46.19H71.92V41.37H46V27.65l3.5,3.63Z" transform="translate(0 0)"/>
+</svg>
