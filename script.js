@@ -35,7 +35,7 @@ $(document).ready(function() {
 		});
 	}
 
-	if($('#logo .logo_mano')){
+	/*if($('#logo .logo_mano')){
 		$('#logo .logo_mano').on( "mouseenter", function() {
 			
 			function getRandomInt(fabio) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 			$('#logo .logo_mano.'+randomNumber+'').removeClass('hidden');
 
 		});
-	}
+	}*/
 	/*$('#logo .logo_mano').on( "click", function() {
 		
 		function getRandomInt(fabio) {

@@ -9,7 +9,7 @@
 :root {
 	--fontSizeS: .8em;
 	--fontSizeM: 1.2em;
-	--fontSizeL: 3em;
+	--fontSizeL: 20px;
 	--grey: #b2b2b2;
 	--orange: rgb(255,70,0);
 	--black: #161616;
@@ -88,7 +88,12 @@ header p {
 }
 header #logo {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
+	margin: 0;
+	width: 120px;
+	height: 1em;
+	object-fit: cover;
+	padding-top: 20px;
 }
 header #logo p {
 	margin-left: 10px;
@@ -102,7 +107,10 @@ header p:not(.logo_mano):hover {
 	background-color: var(--orange);
 }*/
 header #logo img {
-	height: 1.4em;
+	/*height: 1.4em;*/
+	width: 100%;
+	object-fit: cover;
+	tab-size: ;
 }
 /*header #logo img:hover {
 	background-color: var(--orange);
@@ -186,7 +194,7 @@ section.first marquee > img {
 	filter: invert();
 }
 section.player marquee {
-	margin-top: calc(.6em + calc(var(--margin) * 2));
+	margin-top: calc(1.3em + calc(var(--margin) * 2));
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -196,7 +204,7 @@ section .mainArea {
 	width: 100vw;
 	position: relative;
 	display: flex;
-	margin-top: 4.4em;
+	margin-top: 2em;
 	overflow: hidden;
 	flex-direction: row-reverse;
 }
@@ -205,9 +213,13 @@ section .columns {
 	width: 50%;
 	padding: var(--margin);
 	justify-content: space-between;
-	height: calc(100vh - 8.9em);
+	height: calc(100vh - 4em);
 
   overflow: auto;
+}
+
+section .columns.bigRight {
+	background-color: var(--black);
 }
 
 section .columns .gallery {
@@ -295,7 +307,7 @@ section.first .feed_side {
 	border-right: 2px solid black;
 	transition: .6s transform ease-in-out;
 
-	height: calc(100vh - 8.9em);
+	height: calc(100vh - 4em);
   overflow: auto;
 }
 section.first .feed_side.hidden {
@@ -303,17 +315,20 @@ section.first .feed_side.hidden {
 }
 
 #shop {
-	margin-top: 4.4em;
+	margin-top: 2em;
 	z-index: 2;
 	background-color: var(--grey);
 }
 #about {
-	margin-top: 4.4em;
+	margin-top: 2em;
 	z-index: 2;
 	background-color: var(--orange);
 }
 #shop figure:not(:first-child) {
 	margin-top: 2em;
+}
+#shop figure {
+	margin-bottom: 10px;
 }
 
 section.first .feed_side p,
@@ -420,17 +435,17 @@ audio {
 }
 .controlContainer {
 	position:absolute;
-	top:calc(calc(50% + 20vw) + 40px);
+	top:calc(calc(50% + 15vw) + 40px);
 	left:50%;
 	z-index:11;
-	width:40vw;
+	width:30vw;
 	height: auto;
 	transform: translate(-50%,-50%);
 	background-color: white;
 }
 
 .audio-player {
-  width: 40vw;
+  width: 30vw;
   padding: 0;
   margin: 0;
 }
@@ -514,4 +529,34 @@ p small {
   top: 0;
   height: 100%;
   background-color: coral;
+}
+
+/*QUERY MOBILE*/
+@media only screen and (max-width: 768px) {
+	header {
+		padding-bottom: 8px;
+	}
+	section.player marquee {
+		margin-top: calc(.6em + calc(var(--margin) * 2));
+		height: 2.2em;
+		font-size: 20px;
+	}
+	section.first {
+		margin-top: calc(1em + calc(var(--margin) * 2));
+	}
+	marquee {
+		padding-top: 10px;
+		font-size: 24px;
+		height: 2em;
+	}
+	.audio-player{
+		width: 90vw;
+	}
+	.controlContainer {
+		top: calc(calc(50% + 45vw) + 40px);
+		width: 90vw;
+	}
+	header #logo {
+		padding-top: 0px;
+	}
 }
